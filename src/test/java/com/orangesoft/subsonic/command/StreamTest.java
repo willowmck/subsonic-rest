@@ -2,9 +2,9 @@ package com.orangesoft.subsonic.command;
 
 import com.orangesoft.subsonic.data.BinaryResourceContainer;
 import com.orangesoft.subsonic.system.Connection;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.StringBufferInputStream;
 import java.util.HashMap;
 import java.util.Map;
 import org.junit.Test;
@@ -101,9 +101,9 @@ public class StreamTest
         {
             if (params.get("id") != null )
                 if ( params.get("id").equals("8"))
-                    return new StringBufferInputStream("hello");
+                    return new ByteArrayInputStream("hello".getBytes());
                 else
-                    return new StringBufferInputStream(errorJson);
+                    return new ByteArrayInputStream(errorJson.getBytes());
             return super.stream(); 
         }
 
