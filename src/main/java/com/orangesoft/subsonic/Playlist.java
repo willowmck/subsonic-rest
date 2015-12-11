@@ -16,7 +16,6 @@ public class Playlist extends NamedObject
     public final static String DURATION = "duration";
     public final static String CREATED = "created";
     public final static String CHANGED = "changed";
-    public final static String COVER_ART = "coverArt";
     private final String comment;
     private final String owner;
     private final boolean isPublic;

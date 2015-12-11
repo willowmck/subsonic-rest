@@ -9,9 +9,14 @@ import us.monoid.json.JSONObject;
 public abstract class DataObject 
 {
     public final static String ID = "id";
+    final static String COVER_ART = "coverArt";
+    final static String IS_DIR = "isDir";
+    
     public final static int UNDEFINED_INT = -1;
     
     private final int id;
+    String coverArt;
+    boolean isDir;
     
     public DataObject(JSONObject json) throws JSONException
     {
@@ -21,5 +26,15 @@ public abstract class DataObject
     public int getId()
     {
         return id;
+    }
+    
+    final void parseCoverArt(JSONObject json) throws JSONException
+    {
+        coverArt = json.getString(COVER_ART);
+    }
+    
+    final void parseIsDir(JSONObject json) throws JSONException
+    {
+        isDir = json.getBoolean(IS_DIR);
     }
 }

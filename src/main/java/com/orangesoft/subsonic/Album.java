@@ -6,21 +6,16 @@ package com.orangesoft.subsonic;
 import us.monoid.json.JSONException;
 import us.monoid.json.JSONObject;
 
-public class Album extends DataObject
+public class Album extends TitledObject
 {
     private final static String PARENT = "parent";
-    private final static String IS_DIR = "isDir";
-    private final static String TITLE = "title";
     private final static String ALBUM = "album";
     private final static String ARTIST = "artist";
     private final static String YEAR = "year";
     private final static String GENRE = "genre";
     private final static String CREATED = "created";
-    private final static String COVER_ART = "coverArt";
     
     private final int parent;
-    private final boolean isDir;
-    private final String title;
     private final String albumName;
     private final String artist;
     private int year = UNDEFINED_INT;
@@ -32,8 +27,7 @@ public class Album extends DataObject
     {
         super(json);
         parent = json.getInt(PARENT);
-        isDir = json.getBoolean(IS_DIR);
-        title = json.getString(TITLE);
+        parseIsDir(json);
         albumName = json.getString(ALBUM);
         artist = json.getString(ARTIST);
         created = json.getString(CREATED);
@@ -56,11 +50,6 @@ public class Album extends DataObject
     public boolean isDir()
     {
         return isDir;
-    }
-    
-    public String getTitle()
-    {
-        return title;
     }
     
     public String getAlbumName()
