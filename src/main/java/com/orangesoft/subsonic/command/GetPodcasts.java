@@ -16,7 +16,7 @@ public class GetPodcasts extends Command
     final static String COMMAND = "getPodcasts.view";
     final static String PODCASTS = "podcasts";
     final static String CHANNEL = "channel";
-    private List<Channel> channels;
+    private final List<Channel> channels;
     
     public GetPodcasts(Connection connection)
     {
