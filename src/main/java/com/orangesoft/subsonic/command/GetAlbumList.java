@@ -17,7 +17,7 @@ public class GetAlbumList extends Command
     private final static String GET_ALBUM_LIST = "getAlbumList.view";
     private final static String ALBUM_LIST = "albumList";
     private final static String ALBUM = "album";
-    private List<Album> albums;
+    protected List<Album> albums;
 
     public GetAlbumList(Connection connection, Map<String, String> params)
     {
@@ -36,6 +36,11 @@ public class GetAlbumList extends Command
     {
         albums = new ArrayList<>();
         JSONObject albumList = json.getJSONObject(ALBUM_LIST);
+        parseAlbums(albumList);
+    }
+
+    protected void parseAlbums(JSONObject albumList) throws JSONException
+    {
         JSONArray albumArray = albumList.getJSONArray(ALBUM);
         for (int i=0; i < albumArray.length(); i++)
         {
@@ -44,7 +49,7 @@ public class GetAlbumList extends Command
             albums.add(album);
         }
     }
-    
+
     public List<Album> getList()
     {
         return albums;

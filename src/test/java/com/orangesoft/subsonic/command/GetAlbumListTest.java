@@ -52,11 +52,11 @@ public class GetAlbumListTest
         assertEquals("The Dream Of The Blue Turtles", getAlbumList.getList().get(4).getAlbumName());
         assertEquals("Bicycle Face", getAlbumList.getList().get(5).getArtist());
         assertEquals(Album.UNDEFINED_INT, getAlbumList.getList().get(6).getYear());
-        assertEquals(17, getAlbumList.getList().get(7).getGenre());
-        assertEquals(Album.UNDEFINED_INT, getAlbumList.getList().get(8).getCoverArt());
+        assertEquals("17", getAlbumList.getList().get(7).getGenre());
+        assertEquals("", getAlbumList.getList().get(8).getCoverArt());
         assertEquals("2013-07-31T12:38:02.000Z", getAlbumList.getList().get(9).getCreated());
-        assertEquals(9650, getAlbumList.getList().get(9).getCoverArt());
-        assertEquals(Album.UNDEFINED_INT, getAlbumList.getList().get(6).getGenre());
+        assertEquals("9650", getAlbumList.getList().get(9).getCoverArt());
+        assertEquals("", getAlbumList.getList().get(6).getGenre());
         assertEquals(1965, getAlbumList.getList().get(9).getYear());
     }
     

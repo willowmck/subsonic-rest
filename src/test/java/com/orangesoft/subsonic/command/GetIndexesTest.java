@@ -16,7 +16,7 @@ import java.util.List;
 public class GetIndexesTest
 {
     @Test
-    public void getIndexes()
+    public void getIndexes() throws Exception
     {
         Connection connection = new FakeConnection();
         GetIndexes getIndexes = new GetIndexes(connection);

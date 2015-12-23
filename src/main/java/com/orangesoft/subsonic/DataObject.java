@@ -35,6 +35,6 @@ public abstract class DataObject
     
     final void parseIsDir(JSONObject json) throws JSONException
     {
-        isDir = json.getBoolean(IS_DIR);
+        isDir = json.optBoolean(IS_DIR);
     }
 }
