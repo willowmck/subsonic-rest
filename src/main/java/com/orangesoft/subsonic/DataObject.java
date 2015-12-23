@@ -30,7 +30,7 @@ public abstract class DataObject
     
     final void parseCoverArt(JSONObject json) throws JSONException
     {
-        coverArt = json.getString(COVER_ART);
+        coverArt = json.optString(COVER_ART);
     }
     
     final void parseIsDir(JSONObject json) throws JSONException

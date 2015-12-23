@@ -24,8 +24,7 @@ public class Album extends DataObject
     private final String albumName;
     private final String artist;
     private int year = UNDEFINED_INT;
-    private String genre;
-    private String coverArt;
+    private final String genre;
     private final String created;
     private final String title;
     private final String name;
@@ -42,11 +41,11 @@ public class Album extends DataObject
         artist = json.getString(ARTIST);
         created = json.getString(CREATED);
         genre = json.optString(GENRE);
-
-        coverArt = json.optString(COVER_ART);
         
         if (json.has(YEAR))
             year = json.optInt(YEAR);
+        
+        parseCoverArt(json);
 
         title = json.optString(TITLE);
         name = json.optString(NAME);
