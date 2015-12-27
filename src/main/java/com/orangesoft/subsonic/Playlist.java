@@ -3,6 +3,9 @@
  */
 package com.orangesoft.subsonic;
 
+import java.util.ArrayList;
+import java.util.List;
+import us.monoid.json.JSONArray;
 import us.monoid.json.JSONException;
 import us.monoid.json.JSONObject;
 
@@ -16,6 +19,7 @@ public class Playlist extends NamedObject
     public final static String DURATION = "duration";
     public final static String CREATED = "created";
     public final static String CHANGED = "changed";
+    public final static String ENTRY = "entry";
     private final String comment;
     private final String owner;
     private final boolean isPublic;
@@ -23,7 +27,7 @@ public class Playlist extends NamedObject
     private final int duration;
     private final String created;
     private final String changed;
-    private final String coverArt;
+    private final List<Entry> entries;
     
     public Playlist(JSONObject json) throws JSONException
     {
@@ -36,6 +40,11 @@ public class Playlist extends NamedObject
         created = json.getString(CREATED);
         changed = json.getString(CHANGED);
         coverArt = json.getString(COVER_ART);
+        entries = new ArrayList<>();
+        JSONArray entriesArray = json.optJSONArray(ENTRY);
+        if (entriesArray != null)
+            for (int i=0; i<entriesArray.length(); i++)
+                entries.add(new Entry(entriesArray.getJSONObject(i)));
     }
     
     public String getComment()
@@ -76,5 +85,10 @@ public class Playlist extends NamedObject
     public String getCoverArt()
     {
         return coverArt;
+    }
+    
+    public List<Entry> getEntries()
+    {
+        return entries;
     }
 }

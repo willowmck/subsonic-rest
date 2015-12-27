@@ -53,7 +53,7 @@ public class Song extends TitledObject
         parseIsDir(json);
         album = json.getString(ALBUM);
         artist = json.getString(ARTIST);
-        track = json.getInt(TRACK);
+        track = json.optInt(TRACK);
         year = json.optInt(YEAR);
         genre = json.optString(GENRE);
         parseCoverArt(json);
