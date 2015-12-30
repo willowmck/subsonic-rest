@@ -47,7 +47,7 @@ public class GetAlbumList2Test
         List<Album> albums = getAlbumList2.getList();
         assert(!albums.isEmpty());
         Album album = albums.get(0);
-        assertEquals(1070, album.getId());
+        assertEquals("1070", album.getId());
         album = albums.get(1);
         assertEquals("modern", album.getName());
         album = albums.get(2);

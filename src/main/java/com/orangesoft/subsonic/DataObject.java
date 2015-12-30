@@ -14,16 +14,16 @@ public abstract class DataObject
     
     public final static int UNDEFINED_INT = -1;
     
-    private final int id;
+    private final String id;
     String coverArt;
     boolean isDir;
     
     public DataObject(JSONObject json) throws JSONException
     {
-        this.id = json.getInt(ID);
+        this.id = json.getString(ID);
     }
     
-    public int getId()
+    public String getId()
     {
         return id;
     }

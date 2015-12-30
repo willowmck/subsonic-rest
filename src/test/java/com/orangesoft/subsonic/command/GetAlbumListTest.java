@@ -45,7 +45,7 @@ public class GetAlbumListTest
         getAlbumList.execute();
         assert(getAlbumList.getStatus());
         assertEquals(10, getAlbumList.getList().size());
-        assertEquals(11551, getAlbumList.getList().get(0).getId());
+        assertEquals("11551", getAlbumList.getList().get(0).getId());
         assertEquals(14177, getAlbumList.getList().get(1).getParent());
         assertEquals(true, getAlbumList.getList().get(2).isDir());
         assertEquals("Wish You Were Here", getAlbumList.getList().get(3).getTitle());

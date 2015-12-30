@@ -25,7 +25,7 @@ public class GetInternetRadioStationsTest
         assert(getInternetRadioStations.getStatus());
         List<InternetRadioStation> internetRadioStations = getInternetRadioStations.getList();
         InternetRadioStation station = internetRadioStations.get(0);
-        assertEquals(1, station.getId());
+        assertEquals("1", station.getId());
         assertEquals("Christmas Standards", station.getName());
         assertEquals("https://www.internet-radio.com/servers/tools/playlistgenerator/?u=http://108.61.73.117:8118/listen.pls&t=.m3u",
                 station.getStreamUrl());

@@ -49,12 +49,12 @@ public class Search2Test
         
         List<Artist> artists = searchResult2.getArtists();
         Artist artist = artists.get(0);
-        assertEquals(14662, artist.getId());
+        assertEquals("14662", artist.getId());
         assertEquals("Betty MacDonald", artist.getName());
         
         List<Album> albums = searchResult2.getAlbums();
         Album album = albums.get(0);
-        assertEquals(523, album.getId());
+        assertEquals("523", album.getId());
         album = albums.get(1);
         assertEquals(475, album.getParent());
         album = albums.get(2);
@@ -76,7 +76,7 @@ public class Search2Test
         
         List<Song> songs = searchResult2.getSongs();
         Song song = songs.get(0);
-        assertEquals(183, song.getId());
+        assertEquals("183", song.getId());
         song = songs.get(1);
         assertEquals(25, song.getParent());
         song = songs.get(2);

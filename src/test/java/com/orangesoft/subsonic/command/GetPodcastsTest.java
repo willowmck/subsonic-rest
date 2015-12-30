@@ -25,7 +25,7 @@ public class GetPodcastsTest
         assert(getPodcasts.getStatus());
         assert(!getPodcasts.getChannels().isEmpty());
         Channel channel = getPodcasts.getChannels().get(0);
-        assertEquals(2, channel.getId());
+        assertEquals("2", channel.getId());
         assertEquals("http://www.npr.org/templates/rss/podcast.php?id=510298", 
                 channel.getUrl());
         assertEquals("TED Radio Hour", channel.getTitle());
@@ -36,7 +36,7 @@ public class GetPodcastsTest
         assertEquals("completed", channel.getStatus());
         assert(!channel.getEpisodes().isEmpty());
         Episode episode = channel.getEpisodes().get(0);
-        assertEquals(0, episode.getId());
+        assertEquals("0", episode.getId());
         episode = channel.getEpisodes().get(1);
         assert(!episode.isDir());
         episode = channel.getEpisodes().get(2);

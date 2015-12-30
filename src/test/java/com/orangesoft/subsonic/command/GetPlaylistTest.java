@@ -54,7 +54,7 @@ public class GetPlaylistTest
         getPlaylist.execute();
         assert(getPlaylist.getStatus());
         Playlist playlist = getPlaylist.getPlaylist();
-        assertEquals(286, playlist.getId());
+        assertEquals("286", playlist.getId());
         assertEquals("Carefree", playlist.getName());
         assertEquals("Auto-imported from Carefree.m3u", playlist.getComment());
         assertEquals("admin", playlist.getOwner());
@@ -66,7 +66,7 @@ public class GetPlaylistTest
         assertEquals("pl-286", playlist.getCoverArt());
         List<Entry> entries = playlist.getEntries();
         Entry entry = entries.get(0);
-        assertEquals(10654, entry.getId());
+        assertEquals("10654", entry.getId());
         assertEquals(10635, entry.getParent());
         assert(!entry.isDir());
         assertEquals("Don't Lie", entry.getTitle());

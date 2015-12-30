@@ -21,7 +21,7 @@ public class GetMusicFoldersTest
         GetMusicFolders getMusicFolders = new GetMusicFolders(connection);
         getMusicFolders.execute();
         assert(getMusicFolders.getStatus());
-        assertEquals(getMusicFolders.getList().get(0).getId(), 0);
+        assertEquals(getMusicFolders.getList().get(0).getId(), "0");
         assertEquals(getMusicFolders.getList().get(1).getName(), "Video");
         assertEquals(getMusicFolders.getList().size(), 2);
     }

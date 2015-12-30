@@ -23,7 +23,7 @@ public class GetPlaylistsTest
         assert(getPlaylists.getStatus());
         List<Playlist> playlists = getPlaylists.getList();
         assertEquals(4, playlists.size());
-        assertEquals(278, playlists.get(0).getId());
+        assertEquals("278", playlists.get(0).getId());
         assertEquals("Alternative Dance", playlists.get(1).getName());
         assertEquals("Auto-imported from Blues.m3u", playlists.get(2).getComment());
         assertEquals("admin", playlists.get(3).getOwner());
